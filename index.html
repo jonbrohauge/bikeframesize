@@ -7,13 +7,27 @@
 </head>
 <body onload="loadForm();">
 <form>
-    <div id="frameSizeDiv" onchange="updateForm();">Choose framesize:</div>
-    Citybike stel
-    <div id="cityFrameSizeDiv"></div>
-    MTB stel
-    <div id="mtbFrameSizeDiv"></div>
-    Racerstel
-    <div id="raceFrameSizeDiv"></div>
+    <table>
+        <tr>
+            <th>Type of frame</th>
+            <th>Frame size</th>
+        </tr>
+        <tr>
+            <td colspan="2"><div id="frameSizeDiv" onchange="calculateFrameSize();">Choose framesize:</div></td>
+        </tr>
+        <tr>
+            <td>City bike</td>
+            <td id="cityFrameSize">Choose framesize</td>
+        </tr>
+        <tr>
+            <td>Mountainbike</td>
+            <td id="mtbFrameSize">Choose framesize</td>
+        </tr>
+        <tr>
+            <td>Racing bike</td>
+            <td id="raceFrameSize">Choose framesize</td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>
