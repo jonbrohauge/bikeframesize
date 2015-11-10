@@ -18,12 +18,16 @@ function loadForm() {
     }
 }
 
-function calculateFrameSize() {
+function updateFrameSize() {
     var frameSize = document.getElementById('frameSizeSelect');
     if(frameSize.value != 0) {
-        document.getElementById("cityFrameSize").innerHTML = (Math.round(((((frameSize.value * 0.66) - 4) / 2.54) * 10)) / 10) + '"';
-        document.getElementById("mtbFrameSize").innerHTML = (Math.round(((((frameSize.value * 0.66) - 8) / 2.54) * 10)) / 10) + '"';
-        document.getElementById("raceFrameSize").innerHTML = (Math.round((((frameSize.value * 0.66) / 2.54) * 10)) / 10) + '"';
+        document.getElementById("cityFrameSize").innerHTML = calculateFrameSize(frameSize.value, 4) + '"';
+        document.getElementById("mtbFrameSize").innerHTML = calculateFrameSize(frameSize.value, 8) + '"';
+        document.getElementById("raceFrameSize").innerHTML = calculateFrameSize(frameSize.value, 0) + '"';
     }
+}
+
+function calculateFrameSize(frameSize, seed) {
+    return (Math.round(((((frameSize * 0.66) - seed) / 2.54) * 10)) / 10);
 }
 
